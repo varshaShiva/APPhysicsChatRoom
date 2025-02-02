@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AP Physics Chat Room</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center my-4">AP Physics Chat Room</h1>
+        <!-- Authentication Section -->
+        <div id="auth-container" class="card">
+            <div class="card-body">
+                <div id="login-form">
+                    <h3 class="card-title text-center">Login</h3>
+                    <input type="email" id="email" class="form-control my-2" placeholder="Email">
+                    <input type="password" id="password" class="form-control my-2" placeholder="Password">
+                    <div class="d-flex align-items-center my-2">
+                        <label for="color-picker" class="form-label mr-2">Select your message color:</label>
+                        <input type="color" id="color-picker" class="form-control" value="#00ff00">
+                        <button id="save-color-button" class="btn btn-secondary ml-2">Save Color</button>
+                    </div>
+                    <button id="login-button" class="btn btn-primary btn-block my-2">Login</button>
+                    <button id="register-button" class="btn btn-secondary btn-block my-2">Register</button>
+                </div>
+                <div id="logout-form" class="d-none text-center">
+                    <button id="logout-button" class="btn btn-danger">Logout</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Chat Section -->
+        <div id="chat-container" class="card d-none mt-4">
+            <div id="messages" class="card-body"></div>
+            <div class="card-footer">
+                <div class="input-group">
+                    <input type="text" id="message-input" class="form-control" placeholder="Type a message...">
+                    <div class="input-group-append">
+                        <button id="send-button" class="btn btn-primary">
+                            Send <i class="fas fa-paper-plane icon"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <!-- Custom JS -->
+    <script src="main.js"></script>
+</body>
+</html>
